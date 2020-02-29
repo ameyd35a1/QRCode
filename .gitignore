@@ -137,9 +137,12 @@ _TeamCity*
 .axoCover/*
 !.axoCover/settings.json
 
+<<<<<<< HEAD
 # Coverlet is a free, cross platform Code Coverage Tool
 coverage*[.json, .xml, .info]
 
+=======
+>>>>>>> 3ba4d39d1e665d146841031f9bbb4ef5c11eb532
 # Visual Studio code coverage results
 *.coverage
 *.coveragexml
