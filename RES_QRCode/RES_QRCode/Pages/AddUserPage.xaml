@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ViewModels="clr-namespace:RES_QRCode.ViewModels;assembly=RES_QRCode"
+             xmlns:Custom="clr-namespace:RES_QRCode.Helper;assembly=RES_QRCode"
+             x:Class="RES_QRCode.Pages.AddUserPage"
+             Title="Add User" BackgroundColor="WhiteSmoke">
+    <ContentPage.BindingContext>
+        <ViewModels:AddUserViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" Margin="10" VerticalOptions="Center">
+            <Grid VerticalOptions="Start" Margin="10,0,10,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="35*" />
+                    <ColumnDefinition Width="65*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="10" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="10" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="10" />
+                    <RowDefinition Height="40" />
+                </Grid.RowDefinitions>
+
+                <Label Text="Username" Grid.Row="0" Grid.Column="0" VerticalOptions="Center" FontFamily="{StaticResource NormalFont}" />
+                <Custom:CustomEntry Placeholder="Enter Username" Grid.Row="0" Grid.Column="1" FontSize="Small" Text="{Binding Username}" Keyboard="Email"
+                                    BorderColor="IndianRed" BorderWidth="2" BorderRadius="20" LeftPadding="20" RightPadding="20" TopPadding="10" BottomPadding="10" FontFamily="{StaticResource NormalFont}" />
+                
+                <Label Grid.Row="1" Grid.ColumnSpan="2" />
+
+                <Label Text="Password" Grid.Row="2" Grid.Column="0" VerticalOptions="Center" FontFamily="{StaticResource NormalFont}" />
+                <Custom:CustomEntry Placeholder="Enter Password" IsPassword="True" Grid.Row="2" Grid.Column="1" FontSize="Small" Text="{Binding Password}"
+                                    BorderColor="IndianRed" BorderWidth="2" BorderRadius="20" LeftPadding="20" RightPadding="20" TopPadding="10" BottomPadding="10" FontFamily="{StaticResource NormalFont}" />
+                
+                <Label Grid.Row="3" Grid.ColumnSpan="2" />
+
+                <Label Text="Confirm Password" Grid.Row="4" Grid.Column="0" VerticalOptions="Center" FontFamily="{StaticResource NormalFont}" />
+                <Custom:CustomEntry Placeholder="Confirm Password" IsPassword="True" Grid.Row="4" Grid.Column="1" FontSize="Small" Text="{Binding ConfirmPassword}"
+                                    BorderColor="IndianRed" BorderWidth="2" BorderRadius="20" LeftPadding="20" RightPadding="20" TopPadding="10" BottomPadding="10" FontFamily="{StaticResource NormalFont}" />
+
+                <Label Grid.Row="5" Grid.ColumnSpan="2" />
+
+                <Label Text="Administrator" Grid.Row="6" Grid.Column="0" VerticalOptions="Center" FontFamily="{StaticResource NormalFont}" />
+                <Switch Grid.Row="6" Grid.Column="1" VerticalOptions="Center" IsToggled="{Binding IsAdmin}" HorizontalOptions="Start"/>
+
+            </Grid>
+            <StackLayout Orientation="Horizontal" Margin="20" HorizontalOptions="Center">
+                <Button Grid.Row="3" Grid.ColumnSpan="2" HorizontalOptions="Center" Text="Add User" 
+                        BorderColor="IndianRed" BorderWidth="2" Margin="0,0,20,0" BackgroundColor="IndianRed" TextColor="WhiteSmoke"  BorderRadius="20" WidthRequest="150"
+                        Command="{Binding AddUserCommand}" FontFamily="{StaticResource NormalFont}" />
+                <Button Grid.Row="3" Grid.ColumnSpan="2" HorizontalOptions="Center" Text="Cancel" 
+                        BorderColor="IndianRed" BorderWidth="2" BackgroundColor="IndianRed" TextColor="WhiteSmoke"  BorderRadius="20" WidthRequest="150"
+                        Clicked="BtnCancel_Clicked" FontFamily="{StaticResource NormalFont}" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RES_QRCode.Pages.SettingsPage"
+             xmlns:yummy="clr-namespace:RES_QRCode.Helper;assembly=RES_QRCode">
+    <ContentPage.Content>
+        <yummy:PancakeView BackgroundColor="#bc91d7" CornerRadius="60,0,0,60" IsClippedToBounds="true" HorizontalOptions="FillAndExpand" HeightRequest="150">
+            <Label Text="Welcome to Xamarin.Forms!"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+        </yummy:PancakeView>
+    </ContentPage.Content>
+</ContentPage>
